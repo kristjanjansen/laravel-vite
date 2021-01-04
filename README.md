@@ -6,7 +6,7 @@ This is a demo project showing off how to use recently launched [Vite 2](https:/
 
 It relies on Vite's [backend integration](https://vitejs.dev/guide/backend-integration.html) support and configures Vite to support Laravel-specific file layout and naming conventions. It also removes the need for Webpack-based Laravel Mix.
 
-The experiment provides a basic JS + Vue + CSS support with hot reload, but there is also a branch showing off Tailwind support. See also other features of Vite, including full Typescript support, CSS preprocessors, asset pipelines, etc.
+> This experiment provides a basic JS + Vue + CSS support with hot reload, but there is also a [branch with Tailwind support](https://github.com/kristjanjansen/laravel-vite/tree/tw).
 
 ### Getting started
 
@@ -26,7 +26,7 @@ npm run dev
 npm run build
 ```
 
-To test it, change the `.env` file as follows:
+To test production build, change the `.env` file as follows and refresh the page.
 
 ```env
 APP_ENV=production
@@ -37,6 +37,12 @@ APP_ENV=production
 The key code snippet to get Vite running both in development and production mode is in [./resources/views/welcome.blade.php](./resources/views/welcome.blade.php):
 
 ```blade
+@php
+
+$manifest = json_decode(@file_get_contents(public_path('/dist/manifest.json')), true);
+
+@endphp
+
 @if (env('APP_ENV') == 'local')
     <script type="module" src="http://localhost:3000/@vite/client"></script>
     <script type="module" src="http://localhost:3000/index.js"></script>
@@ -52,23 +58,13 @@ In the production environment, we include the JS and CSS based on the JSON manif
 
 ### Notes
 
-Vite's background integration provides _almost_ everything to have a smooth integration between Laravel and Vite, but there are some exceptions:
+Vite's backend integration provides most of the features for a smooth integration between Laravel and Vite, but there are some exceptions:
 
 ### Incompatible manifest
 
-Vite's [manifest genration](https://vitejs.dev/config/#build-manifest) is not compatible with Laravel Mix manifest, so you can not use Laravel's [mix()](https://laravel.com/docs/8.x/helpers#method-mix) helper.
+Vite's [manifest generation](https://vitejs.dev/config/#build-manifest) is not compatible with Laravel Mix manifest, so you can not use Laravel's [mix()](https://laravel.com/docs/8.x/helpers#method-mix) helper.
 
 To overcome this, this demo project relies on custom manifest parsing that has to be hardened and extracted to a separate utility in production sites:
-
-```blade
-@php
-
-$manifest = json_decode(@file_get_contents(public_path('/dist/manifest.json')), true);
-
-@endphp
-
-<link href="dist/{{ $manifest['index.css']['file'] }}" rel="stylesheet" />
-```
 
 ### No JS entrypoint
 

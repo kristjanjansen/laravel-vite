@@ -30,6 +30,8 @@ $users = [['name' => 'Joe'],['name' =>'Jill']];
 
         <p>Environment: {{ env('APP_ENV') }}</p>
 
+        <br />
+
         <div id="app">
 
             <Users :users-from-props="{{ json_encode($users) }}" />

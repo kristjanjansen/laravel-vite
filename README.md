@@ -4,7 +4,7 @@
 
 ### About
 
-This is a demo project showing off how to use recently launched [Vite 2](https://vitejs.dev/), super-fast ESM-based development environment, and production bundler with Laravel.
+This is a demo project showing off how to use recently launched [Vite 2](https://vitejs.dev/) (super-fast ESM-based development environment, and production bundler) with Laravel.
 
 It relies on Vite's [backend integration](https://vitejs.dev/guide/backend-integration.html) support and configures Vite to support Laravel-specific file layout and naming conventions. It also removes the need for Webpack-based Laravel Mix.
 

@@ -1,3 +1,5 @@
+![](./screenshot.png)
+
 ## Using Laravel 8.x with Vite 2.x
 
 ### About

@@ -5,9 +5,7 @@
 Name: {{ user.name }}</pre
     >
     <p>Got users data from API route <code>/api/users</code></p>
-    <pre class="gray-200" v-for="(user, i) in usersFromApi" :key="i">
-Name: {{ user.name }}</pre
-    >
+    <pre v-for="(user, i) in usersFromApi" :key="i">Name: {{ user.name }}</pre>
 </template>
 
 <script setup>

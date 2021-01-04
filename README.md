@@ -26,6 +26,12 @@ npm run dev
 npm run build
 ```
 
+To test it, change the `.env` file as follows:
+
+```env
+APP_ENV=production
+```
+
 ### Implementation
 
 The key code snippet to get Vite running both in development and production mode is in [./resources/views/welcome.blade.php](./resources/views/welcome.blade.php):

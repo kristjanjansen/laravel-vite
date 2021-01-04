@@ -1,6 +1,8 @@
 @php
 
-$manifest = json_decode(@file_get_contents(public_path('/dist/manifest.json')), true)
+$manifest = json_decode(@file_get_contents(public_path('/dist/manifest.json')), true);
+
+$users = [['name' => 'Joe'],['name' =>'Jill']];
 
 @endphp
 
@@ -15,7 +17,7 @@ $manifest = json_decode(@file_get_contents(public_path('/dist/manifest.json')), 
 
         @if (env('APP_ENV') == 'local')
             <script type="module" src="http://localhost:3000/@vite/client"></script>
-            <script type="module" src="http://localhost:3000/app.js"></script>
+            <script type="module" src="http://localhost:3000/index.js"></script>
         @else
             <script type="module" src="dist/{{ $manifest['index.js']['file'] }}"></script>
             <link href="dist/{{ $manifest['index.css']['file'] }}" rel="stylesheet" />
@@ -24,9 +26,15 @@ $manifest = json_decode(@file_get_contents(public_path('/dist/manifest.json')), 
     
     <body>
     
-        <h2>Hello from PHP, {{ env('APP_ENV') }} environment</h2>
+        <h3>Hello from Blade template <code>welcome.blade.php</code></h3>
 
-        <div id="app"></div>
+        <p>Environment: {{ env('APP_ENV') }}</p>
+
+        <div id="app">
+
+            <Users :users-from-props="{{ json_encode($users) }}" />
+
+        </div>
         
     </body>
 

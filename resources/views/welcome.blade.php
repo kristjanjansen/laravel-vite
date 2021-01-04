@@ -1,6 +1,6 @@
 @php
 
-$manifest = json_decode(file_get_contents(public_path('/dist/manifest.json')), true)
+$manifest = json_decode(@file_get_contents(public_path('/dist/manifest.json')), true)
 
 @endphp
 

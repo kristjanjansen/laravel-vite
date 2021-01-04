@@ -13,16 +13,12 @@ $manifest = json_decode(file_get_contents(public_path('/dist/manifest.json')), t
 
         <title>Laravel Vite</title>
 
-        <style>
-            body {
-                font-family: sans-serif;
-            }
-        </style>
         @if (env('APP_ENV') == 'local')
             <script type="module" src="http://localhost:3000/@vite/client"></script>
             <script type="module" src="http://localhost:3000/app.js"></script>
         @else
             <script type="module" src="dist/{{ $manifest['index.js']['file'] }}"></script>
+            <link href="dist/{{ $manifest['index.css']['file'] }}" rel="stylesheet" />
         @endif
     </head>
     

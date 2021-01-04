@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('/data', function (Request $request) {
+Route::get('/users', function (Request $request) {
     return response()->json([['name' => 'Joe'],['name' => 'Jill']]);
 });

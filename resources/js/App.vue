@@ -1,17 +1,20 @@
 <template>
     <h2>Hello from VueJS</h2>
-    <p>Got data from API route <code>/api/data</code></p>
-    <p v-for="row in data">Name: {{ row.name }}</p>
+    <p>Got users data from API route <code>/api/users</code></p>
+    <p v-for="user in usersFromApi">Name: {{ user.name }}</p>
 </template>
 
 <script setup>
-// Using the experimental syntaxes:
+// Using the experimental setup syntax:
 // https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
-// https://github.com/vuejs/rfcs/blob/ref-sugar/active-rfcs/0000-ref-sugar.md
 
-ref: data = [];
+import { ref, defineProps } from "vue";
 
-fetch("./api/data")
+const props = defineProps(["usersFromProps"]);
+
+const usersFromApi = ref([]);
+
+fetch("./api/users")
     .then((res) => res.json())
-    .then((res) => (data = res));
+    .then((res) => (usersFromApi.value = res));
 </script>

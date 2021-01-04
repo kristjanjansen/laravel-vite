@@ -64,22 +64,24 @@ Vite's backend integration provides most of the features for a smooth integratio
 
 Vite's [manifest generation](https://vitejs.dev/config/#build-manifest) is not compatible with Laravel Mix manifest, so you can not use Laravel's [mix()](https://laravel.com/docs/8.x/helpers#method-mix) helper.
 
-To overcome this, this demo project relies on custom manifest parsing that has to be hardened and extracted to a separate utility in production sites:
+To overcome this, this demo project relies on custom manifest parsing that has to be hardened and extracted to a separate utility in production sites.
 
 ### No JS entrypoint
 
-Vite detects the main entrypoint to the JS from the `/index.html` file. There is also a [library mode](https://vitejs.dev/guide/build.html#library-mode), a way to specify a `.js` entrypoint instead of `.html,` but this mode is not preferrable for Laravel application.
+Vite detects the main Javascript entrypoint from the `/index.html` file. There is also a [library mode](https://vitejs.dev/guide/build.html#library-mode), a way to specify a `.js` entrypoint instead of `.html,` but this mode is not preferrable for Laravel application.
 
 To overcome this, this project includes a dummy `resources/js/index.html` file just for Vite to pick up the right entrypoint `resources/js/index.js`
 
 ### Conflicting /public directory
 
-Vite copies all the contents of `/public` to the production `dist` directory. This project has configured the production code directory to be in `/public/dist`.
+Vite copies all the contents of `/public` to the production `dist` directory.
 
-As Laravel also has an existing `/public` directory and copying it to its subdirectory leads to an infinite loop, the Vite is configured to have JS project root at `/resources/js`.
+In this project the production production directory is set at `/public/dist`.
+
+As Laravel has an existing `/public` directory and copying its contents to its subdirectory leads to an infinite copying loop, the Vite is configured to have project root at `/resources/js`.
 
 ### Missing template compiler
 
-By default, Vue does not include an inline template compiler in the ESM module. This becomes problematic when one wants to "sprinkle" globally registered Vue components into a Blade template (vs. going full-on SPA).
+By default, VueJS does not include an inline template compiler in the ESM module. This becomes problematic when one wants to "sprinkle" globally registered Vue components into a Blade template (vs. going full-on SPA).
 
-In this project, Vite is configured to import a full Vue build that also includes a template compiler.
+In this project, Vite is configured to import a full VueJS build that also includes a template compiler.

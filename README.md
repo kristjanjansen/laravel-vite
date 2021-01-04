@@ -6,7 +6,7 @@ This is a demo project showing off how to use recently launched [Vite 2](https:/
 
 It relies on Vite's [backend integration](https://vitejs.dev/guide/backend-integration.html) support and configures Vite to support Laravel-specific file layout and naming conventions. It also removes the need for Webpack-based Laravel Mix.
 
-> This experiment provides a basic JS + Vue + CSS support with hot reload, but there is also a [branch with Tailwind support](https://github.com/kristjanjansen/laravel-vite/tree/tw).
+> This experiment provides a basic JS + Vue + CSS support with hot reload, but there is also a [draft PR with Tailwind support](https://github.com/kristjanjansen/laravel-vite/pull/1).
 
 ### Getting started
 

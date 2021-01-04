@@ -24,7 +24,7 @@ $users = [['name' => 'Joe'],['name' =>'Jill']];
         @endif
     </head>
     
-    <body>
+    <body class="p-6">
     
         <h3>Hello from Blade template <code>welcome.blade.php</code></h3>
 

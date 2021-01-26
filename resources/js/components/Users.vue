@@ -1,11 +1,17 @@
 <template>
     <h3>Hello from VueJS component <code>Users</code></h3>
+
     <p>Got users data from prop <code>usersFromProps</code></p>
-    <pre v-for="(user, i) in usersFromProps" :key="i">
+
+    <pre v-for="(user, i) in usersFromProps" :key="i" @click="onClick">
 Name: {{ user.name }}</pre
     >
+
     <p>Got users data from API route <code>/api/users</code></p>
-    <pre v-for="(user, i) in usersFromApi" :key="i">Name: {{ user.name }}</pre>
+
+    <pre v-for="(user, i) in usersFromApi" :key="i" @click="onClick">
+Name: {{ user.name }}</pre
+    >
 
     <slot :usersFromProps="usersFromProps" :onClick="onClick" />
 </template>
@@ -25,5 +31,4 @@ fetch("./api/users")
     .then((res) => (usersFromApi.value = res));
 
 const onClick = () => alert("clicked");
-
 </script>

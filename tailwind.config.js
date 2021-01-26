@@ -1,9 +1,5 @@
 module.exports = {
-    purge: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
-    ],
+    purge: ["./resources/**/*.{vue,js,php}"],
     darkMode: false,
     theme: {
         extend: {},

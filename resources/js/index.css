@@ -3,3 +3,17 @@ body {
     margin: 0;
     padding: 24px;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    h3 {
+        @apply font-semibold;
+    }
+    pre,
+    code {
+        @apply text-sm text-gray-600;
+    }
+}

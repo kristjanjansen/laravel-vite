@@ -34,7 +34,14 @@ $users = [['name' => 'Joe'],['name' =>'Jill']];
 
         <div id="app">
 
-            <Users :users-from-props="{{ json_encode($users) }}" />
+            <Users :users-from-props="{{ json_encode($users) }}" v-slot="{ usersFromProps, onClick }">
+                <p>Got users data from the default slot</p>
+                <pre
+                    v-for="(user, i) in usersFromProps"
+                    :key="i"
+                    @click="onClick"
+                >Name: @{{ user.name }}</pre>
+            </Users>
 
         </div>
         

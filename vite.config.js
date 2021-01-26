@@ -13,5 +13,6 @@ export default {
     build: {
         manifest: true,
         outDir: "../../public/dist",
+        emptyOutDir: true,
     },
 };

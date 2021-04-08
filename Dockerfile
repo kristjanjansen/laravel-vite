@@ -1,5 +1,7 @@
 FROM richarvey/nginx-php-fpm:1.10.4
 
+RUN apk add nodejs
+
 COPY . .
 
 # Image config

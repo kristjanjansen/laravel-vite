@@ -1,7 +1,4 @@
 {
-    "engines": {
-        "node": ">=14.0"
-    },
     "private": true,
     "scripts": {
         "dev": "vite",

@@ -1,10 +1,10 @@
 ![](./screenshot.png)
 
-## Using Vite with Tailwind, Laravel, and Inertia. Also known as VITALI stack
+## Using Vite with Tailwind, Laravel, and Inertia — also known as VITALI stack
 
 ### About
 
-This is a project template showing off how to use [Vite 2](https://vitejs.dev/) (super-fast ESM-based development environment, and production bundler) with [Laravel](https://laravel.com/), [TailwindCSS](https://tailwindcss.com/) and [Inertia](https://inertiajs.com/).
+This is a project template showing off how to use [Vite 2](https://vitejs.dev/) (super-fast ESM-based development environment, and production bundler) with [Laravel](https://laravel.com/), [TailwindCSS](https://tailwindcss.com/) and [InertiaJS](https://inertiajs.com/).
 
 ### Updates
 

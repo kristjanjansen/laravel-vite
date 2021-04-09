@@ -46,10 +46,6 @@ To test the production build, change the `.env` file as follows and refresh the 
 APP_ENV=production
 ```
 
-In the local environment, we include Vite's hot reloader and our main entrypoint (note that `http://localhost:3000/index.js`) refers to `/resources/js/index.js`)
-
-In the production environment, we include the JS and CSS based on the JSON manifest entries.
-
 ### Notes
 
 #### Incompatible Laravel manifest

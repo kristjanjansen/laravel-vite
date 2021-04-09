@@ -2,6 +2,10 @@
 
 ## Using Vite with Tailwind, Laravel, and Inertia — also known as VITALI stack
 
+### Demo
+
+https://laravel-vite-uwusu.ondigitalocean.app/
+
 ### About
 
 This is a project template showing off how to use [Vite 2](https://vitejs.dev/) (super-fast ESM-based development environment, and production bundler) with [Laravel](https://laravel.com/), [TailwindCSS](https://tailwindcss.com/) and [InertiaJS](https://inertiajs.com/).

@@ -18,15 +18,13 @@ const { props } = usePage();
             layout
             <code class="text-purple-400">/resources/js/layouts/Main.vue</code>
         </p>
-        <p>The page is styled using Tailwind CSS and its JIT compiler.</p>
         <p>
             The users data is passed to the page as
             <code class="text-purple-400">props.users</code> via Inertia and
             rendered as
             <code class="text-purple-400">
-                /resources/js/components/User.vue
-            </code>
-            component.
+                /resources/js/components/User.vue</code
+            >
         </p>
         <div class="grid grid-cols-3 gap-4">
             <user v-for="(user, i) in props.users" :key="i" :user="user" />

@@ -18,7 +18,6 @@ export default { layoutName: "Narrow" };
                 /resources/js/layouts/Narrow.vue
             </code>
         </p>
-        <p>The page is styled using Tailwind CSS and its JIT compiler.</p>
         <p>
             The users data is passed to the page as
             <code class="text-purple-400">props.about</code> via Inertia.
